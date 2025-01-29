@@ -1,0 +1,18 @@
+{
+  "name": "esor-vite",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "esor": "^0.1.7"
+  },
+  "devDependencies": {
+    "vite": "^6.0.5"
+  }
+}
