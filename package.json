@@ -10,7 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "esor": "^0.1.7"
+    "esor": "^0.1.9"
   },
   "devDependencies": {
     "vite": "^6.0.5"
