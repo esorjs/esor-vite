@@ -78,12 +78,29 @@ import { html, component } from "esor";
 
 component("user-card", ({ username, age }) => {
   return html`
-    <div>
+    <div class="user-card">
       <h2>${username}</h2>
       <p>Edad: ${age}</p>
     </div>
   `;
 });
+```
+
+### Estilos CSS
+
+```css
+.user-card {
+  border: 1px solid #ccc;
+  padding: 16px;
+  margin: 8px;
+  border-radius: 8px;
+}
+
+.user-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 ```
 
 Este ejemplo muestra cómo pasar propiedades a un componente `user-card` para mostrar información del usuario.
