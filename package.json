@@ -1,7 +1,7 @@
 {
   "name": "esor-vite",
   "private": false,
-  "version": "0.0.3",
+  "version": "0.0.4",
   "type": "module",
   "main": "index.js",
   "scripts": {
@@ -13,7 +13,7 @@
     "esor": "^0.1.5"
   },
   "devDependencies": {
-    "vite": "^6.0.5"
+    "vite": "^6.1.0"
   },
   "description": "App with Esor + Vite",
   "repository": {
