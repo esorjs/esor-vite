@@ -1,6 +1,6 @@
 import "./App.css";
 import "./counter.js";
-import esorLogo from "/esor.svg";
+import esorLogo from "./assets/esor.svg";
 import viteLogo from "/vite.svg";
 
 document.querySelector("#app").innerHTML = `
