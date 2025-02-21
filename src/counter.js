@@ -1,16 +1,16 @@
 import style from "./index.css?raw";
-import { component, html, useSignal } from "esor";
+import { component, html, signal } from "esor";
 
-component("my-counter", () => {
-  const [count, setCount] = useSignal(0);
+  component("my-counter", () => {
+    const count = signal(0);
 
-  return html`
-    <div class="card">
-      <button @click=${() => setCount(count + 1)}>Count is: ${count}</button>
-    </div>
+    return html`
+      <div class="card">
+        <button @click=${() => count(count() + 1)}>Count is: ${() => count()}</button>
+      </div>
 
-    <style>
-      ${style}
-    </style>
-  `;
-});
+      <style>
+        ${style}
+      </style>
+    `;
+  });
