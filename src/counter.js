@@ -6,7 +6,7 @@ import { component, html, signal } from "esor";
 
     return html`
       <div class="card">
-        <button @click=${() => count(count() + 1)}>Count is: ${count}</button>
+        <button onclick=${() => count(count() + 1)}>Count is: ${count}</button>
       </div>
 
       <style>
