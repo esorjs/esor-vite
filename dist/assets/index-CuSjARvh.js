@@ -1,0 +1,49 @@
+(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const o of document.querySelectorAll('link[rel="modulepreload"]'))r(o);new MutationObserver(o=>{for(const i of o)if(i.type==="childList")for(const p of i.addedNodes)p.tagName==="LINK"&&p.rel==="modulepreload"&&r(p)}).observe(document,{childList:!0,subtree:!0});function n(o){const i={};return o.integrity&&(i.integrity=o.integrity),o.referrerPolicy&&(i.referrerPolicy=o.referrerPolicy),o.crossOrigin==="use-credentials"?i.credentials="include":o.crossOrigin==="anonymous"?i.credentials="omit":i.credentials="same-origin",i}function r(o){if(o.ep)return;o.ep=!0;const i=n(o);fetch(o.href,i)}})();const re=`.card {
+  padding: 2em;
+}
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+`;var H=Object.defineProperty,W=e=>{throw TypeError(e)},oe=(e,t,n)=>t in e?H(e,t,{enumerable:!0,configurable:!0,writable:!0,value:n}):e[t]=n,l=(e,t)=>H(e,"name",{value:t,configurable:!0}),w=(e,t,n)=>oe(e,typeof t!="symbol"?t+"":t,n),le=(e,t,n)=>t.has(e)||W("Cannot "+n),ie=(e,t,n)=>(le(e,t,"read from private field"),n?n.call(e):t.get(e)),se=(e,t,n)=>t.has(e)?W("Cannot add the same private member more than once"):t instanceof WeakSet?t.add(e):t.set(e,n),f=null,ce=0,y=[],ae=100,F=l(e=>{let t=e;return l(n=>{if(n===void 0)return f&&!y.includes(f)&&y.push(f),t;let r=typeof n=="function"?n(t):n;if(!Object.is(r,t)){t=r;for(let o of y)o()}return t},"getterSetter")},"signal"),P=l(e=>{let t=0;if(++t>ae){console.warn("Maximum effect update depth exceeded");return}let n=l(()=>{let r=f;f=n;try{e()}finally{f=r,t--}},"reactiveEffect");return n(),()=>y.splice(y.indexOf(n),1)},"effect");l(e=>{let t=F();return P(()=>t(e())),()=>t()},"computed");l(e=>{let t=f;f={id:ce++};try{return e()}finally{f=t}},"batch");function V(e,t,n=null){let r=new CustomEvent(e,{detail:t,bubbles:!0,composed:!0,cancelable:!0});return n&&n.dispatchEvent(r),r}l(V,"emit");function ue(e=null){let t=e;return n=>n!==void 0?t=n:t}l(ue,"ref");function T(e){return e&&(e.__nodeGroups=!0),e}l(T,"markNode");function A(e){return C(e,T)}l(A,"markedFragment");function C(e,t=null,n=null){let r=document.createDocumentFragment();if(!(e!=null&&e.length))return r;for(let o of e)o&&(o=typeof t=="function"?t(o,r):o,Array.isArray(o)?r.appendChild(C(o,t)):r.appendChild(o));return n&&r.childNodes.length&&n.appendChild(r),r}l(C,"createFragment");function g(e,t,n="error"){let r=n==="warn"?console.warn:console.error,o=t instanceof Error?t:new Error(String(t));return r(`[Esor Framework Error] ${e}:`,o.message),o}l(g,"handleError");function d(e,t,n){try{return e()}catch(r){return g(t,r),n}}l(d,"tryCatch");function B(e,t){!e||!t||!t.parentNode||d(()=>{let n=t.parentNode,r=l(s=>{for(let c of s)!c||c.parentNode!==n||(c._cleanup&&typeof c._cleanup=="function"&&c._cleanup(),n.removeChild(c))},"removeNodes"),o=t.__nodeGroups||[],i=new Map(o.map(s=>[s.key,s])),p=e.map((s,c)=>{let h=Array.isArray(s)?s.filter(Boolean):[s],_=h.find(u=>{var j;return((j=u==null?void 0:u.getAttribute)==null?void 0:j.call(u,"key"))!=null}),te=_?_.getAttribute("key"):`__key_${c}`,ne=h.map(u=>(u==null?void 0:u.outerHTML)||"").join("|");return{key:te,nodes:h,state:ne}}),ee=new Map(p.map(s=>[s.key,s]));for(let s of o)!ee.has(s.key)&&r(s.nodes);let m=t;for(let s of p){let c=i.get(s.key);if(c)if(c.state!==s.state)r(c.nodes),n.insertBefore(A(s.nodes),m.nextSibling);else{if(c.nodes[0]!==m.nextSibling){let h=document.createDocumentFragment();for(let _ of c.nodes)h.appendChild(_);n.insertBefore(h,m.nextSibling)}s.nodes=c.nodes}else n.insertBefore(A(s.nodes),m.nextSibling);m=s.nodes[s.nodes.length-1]||m}t.__nodeGroups=p},"list.reconcile")}l(B,"reconcile");var S=new WeakMap,v="\uFEFF\uFEFF";function q(e,t,n=null){!e||!t||(n&&n.parentNode===t?t.insertBefore(e,n):t.appendChild(e))}l(q,"insertFragment");function z(e,t){typeof t=="function"?t(e):t&&typeof t=="object"&&"current"in t&&(t.current=e)}l(z,"setRef");function D(e,t,n){let r=t.slice(2).toLowerCase();e.addEventListener(r,n),e._cleanup=()=>e.removeEventListener(r,n)}l(D,"setEvent");function G(e,t){Object.assign(e.style,t)}l(G,"setStyle");function M(e,t,n){t==="value"||t==="checked"?e[t]=n:n===!1||n===null||n===void 0?e.removeAttribute(t):e.setAttribute(t,n)}l(M,"setAttribute");function E(e,t){let n=e._cleanup;n&&n();let r=P(t);return e._cleanup=r,r}l(E,"setEffect");function U(e,t){let n=e.parentNode,r=e.nextSibling;for(;r&&r.__nodeGroups;)r._cleanup&&r._cleanup(),n.removeChild(r),r=e.nextSibling;t!=null&&t.length&&q(A(t),n,e.nextSibling)}l(U,"replaceNodes");function I(e,t){let n=l(r=>{d(()=>{if(Array.isArray(r))B(r,e);else{let o=document.createTextNode(String(r??""));T(o),U(e,[o])}},"html.updateContent")},"updateContent");typeof t=="function"?E(e,()=>n(t())):n(t)}l(I,"applyContent");var L=l((e,t,n)=>{t?(e.removeAttribute(t),t==="ref"?z(e,n):t[0]=="o"&&t[1]=="n"?D(e,t,n):t==="className"?e.setAttribute("class",n):t==="style"&&typeof n=="object"?E(e,()=>G(e,n)):typeof n=="function"?E(e,()=>M(e,t,n())):M(e,t,n)):I(e,n)},"render");function J(e,t,n){let r=Array.from(e.attributes);for(let o of r)o.value===v&&L(e,o.name,t[n++]);return n}l(J,"processAttributes");function R(e,t,n){if(e.nodeValue===v){let r=document.createComment("");e.replaceWith(r),L(r,null,t[n++])}else{let r=N(e.nodeValue.replaceAll(v,"<!>"));for(let o of Array.from(r.content.childNodes))o.nodeType===8&&L(o,null,t[n++]);e.replaceWith(r.content)}return n}l(R,"processTextNode");function N(e){let t=document.createElement("template");return t.innerHTML=e,t}l(N,"createTemplate");function k(e,t=null){return d(()=>{let n=N(e);return typeof t=="function"&&t(n),[...n.content.childNodes]},"html.templateToNodes",[])}l(k,"templateToNodes");function K(e){let t=[],n=document.createTreeWalker(e.content,5),r;for(;r=n.nextNode();)t.push(r);return t}l(K,"collectNodes");function O(e,...t){return d(()=>e.length===1?k(e[0]):t.length?k(e.join(v),n=>{let r=K(n),o=0;for(let i of r)i.nodeType===1&&i.attributes.length?o=J(i,t,o):i.nodeType===3&&i.nodeValue.includes(v)&&(o=R(i,t,o));return r}):k(e.join("")),"html.build",[])}l(O,"build");function Q(e,...t){return S.has(e)?O(S.get(e),...t):(S.set(e,e),O(e,...t))}l(Q,"html");var a=null,fe=l(e=>a=e,"createLifecycle"),b=l((e,t)=>{if(!a){g("lifecycle","Hook called outside component setup");return}a._lifecycles[e]||(a._lifecycles[e]=[]),a._lifecycles[e].push(t)},"addHook"),x=l(e=>{var t;if((t=a==null?void 0:a._lifecycles)!=null&&t[e])for(let n of a._lifecycles[e])queueMicrotask(()=>d(()=>n.call(a),"lifecycle.runHook"))},"runHook");l(e=>{let t=e();return typeof t=="function"?b("destroy",t):()=>{}},"onEffect");l(e=>b("beforeMount",e),"beforeMount");l(e=>b("mount",e),"onMount");l(e=>b("beforeUpdate",e),"beforeUpdate");l(e=>b("update",e),"onUpdate");l(e=>b("destroy",e),"onDestroy");var de=l(e=>e==null?"":String(e).replace(/[&<>'"]/g,t=>({"&":"&amp;","<":"&lt;",">":"&gt;","'":"&#39;",'"':"&quot;"})[t]),"sanitizeHtml"),pe={true:!0,false:!1,null:null,undefined:void 0,nan:NaN,infinity:1/0,"-infinity":-1/0};function $(e){if(typeof e!="string")return e;let t=e.trim(),n=t.toLowerCase();return pe[n]??(/^[\d.]+$/.test(t)?parseFloat(t):t[0]==="{"||t[0]==="["?X(t):t)}l($,"parseValue");function X(e){try{return JSON.parse(e)}catch{}}l(X,"parseJson");var Y=l(e=>e.startsWith("ref")||e.startsWith("on"),"shouldSkipAttribute"),me=l(e=>{let t=e.attributes;for(let n=0;n<t.length;n++){let{name:r,value:o}=t[n];Y(r)||(e.props[r]=F($(de(o))))}},"initAttributes"),he=l(e=>{let t=new MutationObserver(n=>{for(let r of n){let o=r.attributeName;if(!o||Y(o))continue;let i=e.props[o];i&&i($(e.getAttribute(o)||""))}});t.observe(e,{attributes:!0}),e._cleanup.push(()=>t.disconnect())},"observeAttributes"),be=l(e=>{d(()=>{me(e),he(e)},"props.initPropsAndObserve")},"initPropsAndObserve");function Z(e){e&&(e.emit=(t,n)=>V(t,n,e))}l(Z,"initDispatch");var ye=/^[a-z][a-z0-9-]*$/,ge="open",ve=l((e,{mode:t}={})=>{var n,r;return r=class extends HTMLElement{constructor(){super(),se(this,n,this.attachShadow({mode:t||ge})),w(this,"props",Object.create(null)),w(this,"_lifecycles",{beforeMount:[],mount:[],beforeUpdate:[],update:[],destroy:[]}),w(this,"_cleanup",[]),d(()=>{fe(this),Z(this),be(this);let o=e==null?void 0:e.call(this,this.props);C(o||[],null,ie(this,n)),x("beforeMount")},"component.init")}connectedCallback(){x("mount")}disconnectedCallback(){x("destroy");for(let o=this._cleanup.length-1;o>=0;o--)d(this._cleanup[o],"component.cleanup");this._cleanup.length=0}},n=new WeakMap,r},"BaseComponent"),_e=l((e,t,n={})=>{if(!ye.test(e))return g("component",`Invalid tag name: ${e}`,"error");if(customElements.get(e))return g("component",`${e} ya registrado`,"warn");customElements.define(e,ve(t,n))},"component");_e("my-counter",()=>{const e=F(0);return Q`<div class="card"> <button onclick=${()=>e(e()+1)}>Count is: ${e}</button> </div> <style> ${re} </style>`});const ke="/assets/esor-CmqOm-n0.svg",Ae="/vite.svg";document.querySelector("#app").innerHTML=`
+    <div>
+      <a href="https://vite.dev" target="_blank">
+        <img src="${Ae}" class="logo" alt="Vite logo" />
+      </a>
+      <a href="https://github.com/esorjs/esor" target="_blank">
+        <img src="${ke}" class="logo esor" alt="Esor logo" />
+      </a>
+      <h1>Vite + Esor</h1>
+       <my-counter></my-counter>
+      <p class="read-the-docs">
+        Click on the Vite and Esor logos to learn more
+      </p>
+    </div>
+`;
