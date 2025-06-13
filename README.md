@@ -63,7 +63,7 @@ component("simple-counter", () => {
   return html`
     <div>
       <p>Contador: ${count}</p>
-      <button @click="${() => setCount(count + 1)}">Incrementar</button>
+      <button onclick="${() => setCount(count + 1)}">Incrementar</button>
     </div>
   `;
 });
