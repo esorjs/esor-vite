@@ -55,15 +55,15 @@ Este ejemplo define un nuevo componente llamado `my-greeting` que muestra un sal
 ### Manejar el Estado con Signals
 
 ```javascript
-import { html, useSignal, component } from "esor";
+import { html, signal, component } from "esor";
 
 component("simple-counter", () => {
-  const [count, setCount] = useSignal(0);
+  const count = signal(0);
   
   return html`
     <div>
       <p>Contador: ${count}</p>
-      <button onclick="${() => setCount(count + 1)}">Incrementar</button>
+      <button onclick=${() => count(count() + 1)}>Incrementar</button>
     </div>
   `;
 });
