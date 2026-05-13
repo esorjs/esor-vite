@@ -5,10 +5,10 @@ import viteLogo from "/vite.svg";
 
 document.querySelector("#app").innerHTML = `
     <div>
-      <a href="https://vite.dev" target="_blank">
+      <a href="https://vite.dev" target="_blank" rel="noopener noreferrer">
         <img src="${viteLogo}" class="logo" alt="Vite logo" />
       </a>
-      <a href="https://github.com/esorjs/esor" target="_blank">
+      <a href="https://github.com/esorjs/esor" target="_blank" rel="noopener noreferrer">
         <img src="${esorLogo}" class="logo esor" alt="Esor logo" />
       </a>
       <h1>Vite + Esor</h1>
