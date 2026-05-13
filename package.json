@@ -15,6 +15,7 @@
   "devDependencies": {
     "@rollup/pluginutils": "^5.1.4",
     "html-minifier-terser": "^7.2.0",
+    "terser": "^5.47.1",
     "vite": "^8.0.0"
   },
   "description": "App with Esor + Vite",
