@@ -10,7 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "esor": "latest"
+    "esor": "1.2.2"
   },
   "devDependencies": {
     "@rollup/pluginutils": "^5.1.4",
